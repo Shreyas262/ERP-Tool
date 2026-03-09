@@ -33,6 +33,20 @@ class Employee(Entity):
     def salary(self, new_salary:float):
         self.__salary = new_salary
 
+    @property
+    def name(self):
+        return self.__name
+    @name.setter
+    def name(self, new_name:str):
+        self.__name = new_name
+
+    @property
+    def role(self):
+        return self.__role
+    @role.setter
+    def role(self, new_role:str):
+        self.__role = new_role
+
     def get_details(self):
         return f'ID: {self.emp_id} | Name: {self.__name} | Role: {self.__role} | Salary: {self.__salary}'
 
@@ -44,7 +58,6 @@ class Employee(Entity):
     def __eq__(self, other):
         return self.__emp_id == other.emp_id
 
-emp1 = Employee('E101', 'john', 'Manager', 14000.00)
 
 #3. The manager Class(Inheritance from Employe)
 class Manager(Employee):
@@ -57,5 +70,17 @@ class Manager(Employee):
         base = super().get_details()
         return f'{base} | Bonus: {self.__bonus}'
 
-manager1 = Manager('E101', 'Bob', 'Manager', 14000.00, 2000.0)
-print(manager1.get_details())
+    @property
+    def bonus(self):
+        return self.__bonus
+    @bonus.setter
+    def bonus(self, new_bonus:float):
+        self.__bonus = new_bonus
+
+    def __str__(self):
+        return self.get_details()
+    def __repr__(self):
+        return self.get_details()
+    def __eq__(self, other):
+        return self.__emp_id == other.emp_id
+
