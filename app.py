@@ -13,7 +13,7 @@ def run_system():
     admin_password = '1234'
 
     print("=" *50)
-    print("-------------Welcome to the NextGen ERP------------")
+    print("------------Welcome to the NextGen ERP------------")
     print("="*50)
 
     authenticated = False
@@ -37,7 +37,7 @@ def run_system():
 
     while True:
         print("="*50)
-        print("-------------Main Menu-------------")
+        print("--------------------Main Menu---------------------")
         print("="*50)
         print("1. Manage Employees")
         print("2. Manage Assets")
@@ -46,17 +46,17 @@ def run_system():
 
         choice = get_choice_validation("Please enter your choice: ").strip()
         if choice == '1':
-            print("-------------Employee Management Loading----------------")
+            print("-----------Employee Management Loading----------")
             print()
             manage_employees(employees)
             input("Please press Enter to continue").strip()
 
         elif choice == '2':
-            print("-------------Asset Management Loading----------------")
+            print("-------------Asset Management Loading-------------")
         elif choice == '3':
-            print("-------------Company Financials Loading----------------")
+            print("------------Company Financials Loading------------")
         elif choice == '4':
-            print("-------------Save & Exit----------------")
+            print("-------------------Save & Exit--------------------")
             break
         else:
             print("Please enter a valid choice from 1 to 4.")
