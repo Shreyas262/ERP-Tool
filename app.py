@@ -1,4 +1,6 @@
 import sys
+from EmployeesMenu import *
+from Validator import *
 
 def run_system():
     #1. storage
@@ -11,7 +13,7 @@ def run_system():
     admin_password = '1234'
 
     print("=" *50)
-    print("-------------Welcome to the NextGen ERP-----------")
+    print("-------------Welcome to the NextGen ERP------------")
     print("="*50)
 
     authenticated = False
@@ -21,7 +23,6 @@ def run_system():
         password = input("Please enter your password: ").strip()
         if user == admin_username and password == admin_password:
             print("\n Access granted. Welcome to the NextGen ERP")
-            print("="*50)
             authenticated = True
             break
         else:
@@ -36,16 +37,20 @@ def run_system():
 
     while True:
         print("="*50)
-        print("             Main Menu")
+        print("-------------Main Menu-------------")
         print("="*50)
         print("1. Manage Employees")
         print("2. Manage Assets")
         print("3. Company Financials")
         print("4. Save & Exit")
 
-        choice = input("Please enter your choice: ").strip()
+        choice = get_choice_validation("Please enter your choice: ").strip()
         if choice == '1':
             print("-------------Employee Management Loading----------------")
+            print()
+            manage_employees(employees)
+            input("Please press Enter to continue").strip()
+
         elif choice == '2':
             print("-------------Asset Management Loading----------------")
         elif choice == '3':
