@@ -50,7 +50,10 @@ class Employee(Entity):
     def get_details(self):
         return f'ID: {self.emp_id} | Name: {self.__name} | Role: {self.__role} | Salary: {self.__salary}'
 
-    # Dunder Method: Making our object like real data
+    def assign_asset(self, asts: object):
+        self.assets.append(asts)
+
+    # Dunder Method: Making our object behave like real data
     def __str__(self):
         return self.get_details()
     def __repr__(self):
@@ -65,7 +68,7 @@ class Manager(Employee):
         super().__init__(emp_id, name, role, salary)
         self.__bonus = bonus
 
-    #polymorphism method overriding will change parent class method in child class
+    #polymorphism: method overriding will change parent class method in child class
     def get_details(self):
         base = super().get_details()
         return f'{base} | Bonus: {self.__bonus}'
