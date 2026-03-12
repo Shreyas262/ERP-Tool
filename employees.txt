@@ -1,0 +1,3 @@
+E101|John|Staff|12345.0
+E102|Alice|Staff|30000.0
+E103|Don|Manager|60000.0|1500.0

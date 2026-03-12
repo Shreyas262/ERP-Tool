@@ -1,0 +1,2 @@
+A101|Hardware|Headphones|1000.0|Good|810.0
+A102|Software|Figma|2000.0|2027-12-02

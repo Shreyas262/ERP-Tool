@@ -15,6 +15,7 @@ def manage_employees(employees_dict):
         print("3. Update Employee")
         print("4. Delete Employee")
         print("5. Back to Main Menu")
+        print("-" * 50)
 
         choice = get_choice_validation("Please enter your choice: ", int)
         if choice == '1':
@@ -36,7 +37,8 @@ def manage_employees(employees_dict):
                 new_id = f'E{last_id + 1}'
 
             if role == 'Manager':
-                new_emp = Manager(new_id, name, role, salary, bonus = 1000)
+                bonus = get_validation('Enter Employee Bonus: ', float)
+                new_emp = Manager(new_id, name, role, salary, bonus)
             else:
                 new_emp = Employee(new_id, name, role, salary)
 
@@ -86,7 +88,7 @@ def manage_employees(employees_dict):
                     if empy_data.role == 'Manager':
                         print('3. Update Employee Bonus')
                     print('4. Back to Employee Management Menu')
-                    print()
+
 
                     choice = get_choice_validation("Please enter your choice: ", int)
 
@@ -94,21 +96,21 @@ def manage_employees(employees_dict):
                         new_name = get_validation('Enter New Employee Name: ', str)
                         empy_data.name = new_name
                         print()
-                        print(f'Employee Name changed to "{new_name}".')
+                        print(f'Employee "{empy_id_to_update}", Name changed to "{new_name}".')
                         input("Press Enter to continue...")
 
                     elif choice == '2':
                         new_salary = get_validation('Enter New Employee Salary: ', float)
                         empy_data.salary = new_salary
                         print()
-                        print(f'Employee Salary changed to "{new_salary}".')
+                        print(f'Employee "{empy_id_to_update}", Salary changed to "{new_salary}".')
                         input("Press Enter to continue...")
 
                     elif choice == '3':
                         new_bonus = get_validation('Enter New Employee Bonus: ', float)
                         empy_data.bonus = new_bonus
                         print()
-                        print(f'Employee Bonus changed to "{new_bonus}".')
+                        print(f'Employee "{empy_id_to_update}", Bonus changed to "{new_bonus}".')
                         input("Press Enter to continue...")
 
                     elif choice == '4':
